@@ -38,10 +38,16 @@ module.exports = {
       }
     }
   },
+  /*
+  ** Style loading bar
+  */
   loading: {
     color: '#ddd',
     height: '1px'
   },
+  /*
+  ** Set Environment Variables for Nuxt
+  */
   env: {
     baseUrl: process.env.HOST && process.env.PORT ? `${process.env.HOST}:${process.env.PORT}` : 'http://0.0.0.0:3000'
   }
