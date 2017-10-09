@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const app = express()
-const host = process.env.HOST || '0.0.0.0'
+const host = process.env.HOST || 'localhost'
 const port = process.env.PORT || 3000
 
 console.log(host, port);
@@ -63,4 +63,4 @@ app.use(nuxt.render)
 
 // Listen the server
 app.listen(port, host)
-console.log('Server listening on ' + host + ':' + port) // eslint-disable-line no-console
+console.log('Server listening on port ' + port) // eslint-disable-line no-console

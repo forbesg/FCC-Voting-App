@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="header">
     <div class="brand">
-      <img src="~/static/logo-small.png" alt="Logo" />
+      <img src="~static/logo-small.png" alt="Logo" />
       <div class="title">
         <h1><nuxt-link to='/'>{{$store.state.title}}</nuxt-link></h1>
       </div>
