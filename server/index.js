@@ -8,11 +8,10 @@ import api from './api'
 
 import './models/db'
 
-if (process.env.NODE_ENV === 'production') {
-  console.log('Setting Env')
-  process.env.HOST = '0.0.0.0'
-  process.env.PORT = 8080
-}
+// if (process.env.NODE_ENV === 'production') {
+//   process.env.HOST = '0.0.0.0'
+//   process.env.PORT = 8080
+// }
 
 const app = express()
 const host = process.env.HOST || 'localhost'
@@ -62,5 +61,5 @@ if (config.dev) {
 app.use(nuxt.render)
 
 // Listen the server
-app.listen(port, host)
+app.listen(port)
 console.log('Server listening on port ' + port) // eslint-disable-line no-console
