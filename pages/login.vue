@@ -70,16 +70,6 @@ export default {
         console.log(err)
         this.message = 'Email or password are Incorrect'
       })
-      // this.login({
-      //   email: this.email,
-      //   password: this.password
-      // }).then(() => {
-      //   if (!this.$store.state.user) {
-      //     this.message = 'Username or Password are incorrect'
-      //     return
-      //   }
-      //   this.$router.replace('/dashboard')
-      // })
     },
     handleCloseToast () {
       this.message = null

@@ -58,7 +58,6 @@ router.get('/polls/:id', (req, res) => {
 
 // Update Vote Count on existing Poll
 router.put('/polls/:id', bodyParser.json(), (req, res) => {
-  console.log(req.body);
   Poll.findByIdAndUpdate(req.params.id, { $set: req.body }, { new: true }, function (err, doc) {
       if (err) return res.send(err);
       res.send(doc)

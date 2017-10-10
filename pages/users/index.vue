@@ -52,7 +52,6 @@ export default {
   methods: {
     handleChangePassword (e) {
       e.preventDefault()
-      console.log(e.target.current_password.value)
       if (!this.new_password || !this.current_password || !this.confirm_new_password) {
         this.error = 'Please complete all fields'
         return
@@ -65,26 +64,22 @@ export default {
         current_password: this.current_password,
         new_password: this.new_password
       }
-      console.log('OK0', data, this.$store.state.user)
 
       /***
         API call to update password
       ***/
       const userId = this.$store.state.user.id
-      console.log(userId)
       axios({
         method: 'PUT',
         url: `/api/users/${userId}`,
         data
       }).then(response => {
-        console.log('Response from API', response)
         if (response.status === 201) {
           this.$store.commit('SET_USER', {
             email: response.data.email,
             name: response.data.name,
             id: response.data._id
           })
-          console.log('Updated Store User', this.$store.state.user)
           this.current_password = ''
           this.new_password = ''
           this.confirm_new_password = ''

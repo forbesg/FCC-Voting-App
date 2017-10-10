@@ -49,6 +49,6 @@ module.exports = {
   ** Set Environment Variables for Nuxt
   */
   env: {
-    baseUrl: process.env.HOST && process.env.PORT ? `${process.env.HOST}:${process.env.PORT}` : 'http://0.0.0.0:3000'
+    baseUrl: process.env.HOSTNAME  ? process.env.HOSTNAME : 'http://0.0.0.0:3000'
   }
 }

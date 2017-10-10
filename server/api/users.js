@@ -5,30 +5,6 @@ import User from '../models/users'
 
 const router = Router()
 
-// Mock Users
-const users = [
-  { name: 'Forbes' },
-  { name: 'Pooya' },
-  { name: 'Sébastien' },
-]
-
-/* GET users listing. */
-router.get('/users', function (req, res, next) {
-  res.json(users)
-})
-
-/* GET user by ID. */
-router.get('/users/:id', function (req, res, next) {
-  // const id = parseInt(req.params.id)
-  // if (id >= 0 && id < users.length) {
-  //   res.json(users[id])
-  // } else {
-  //   res.sendStatus(404)
-  // }
-  console.log(req.params);
-  res.status(200).send({id: req.params.id})
-})
-
 /* UPDATE users password. */
 router.put('/users/:id', bodyParser.json(),  function (req, res, next) {
   const id = req.params.id

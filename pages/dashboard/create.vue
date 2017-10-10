@@ -89,9 +89,7 @@ export default {
         },
         data: JSON.stringify(question)
       }).then(response => {
-        console.log(response.data)
         if (response.status === 201) {
-          console.log(this.$root._context.env)
           this.addPoll(response.data)
           this.pollUrl = `${this.$root._context.env.baseUrl}/polls/${response.data._id}`
         }

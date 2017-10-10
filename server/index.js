@@ -8,16 +8,9 @@ import api from './api'
 
 import './models/db'
 
-// if (process.env.NODE_ENV === 'production') {
-//   process.env.HOST = '0.0.0.0'
-//   process.env.PORT = 8080
-// }
-
 const app = express()
 const host = process.env.HOST || 'localhost'
 const port = process.env.PORT || 3000
-
-console.log(host, port);
 
 app.set('port', port)
 
