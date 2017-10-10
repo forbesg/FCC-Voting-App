@@ -2,7 +2,9 @@ import passport from 'passport';
 import Local from 'passport-local'
 import Twitter from 'passport-twitter'
 import User from '../models/users'
-import config from './config'
+if (process.env.NODE_ENV !== 'production') {
+  import config from './config'
+}
 
 const LocalStrategy = Local.Strategy
 const TwitterStrategy = Twitter.Strategy
