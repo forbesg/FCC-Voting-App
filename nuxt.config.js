@@ -7,12 +7,14 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'A Voting App for Free Code Camp' }
+      { hid: 'description', name: 'description', content: 'A Voting App for Free Code Camp' },
+      { name: 'theme-color', content: '#2d3c69' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://picturepan2.github.io/spectre/dist/spectre.min.css'},
-      { rel: 'stylesheet', href: 'https://picturepan2.github.io/spectre/dist/spectre-icons.min.css'}
+      { rel: 'stylesheet', href: 'https://picturepan2.github.io/spectre/dist/spectre-icons.min.css'},
+      { rel: 'manifest', href: '/manifest.json' }
     ]
   },
   /*
