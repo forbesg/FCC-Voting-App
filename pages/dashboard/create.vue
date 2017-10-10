@@ -33,10 +33,13 @@
       <div class="toast toast-warning" v-if="error">
         {{error}}
       </div>
-      <div class="confirmation" v-if="pollUrl">
+      <div class="confirmation text-center" v-if="pollUrl">
         <div class="divider"></div>
+        <h4>
+          Your Poll has been posted.
+        </h4>
         <p>
-          Your Poll has been posted to <a :href="pollUrl" target="_blank">{{ pollUrl }}</a>
+          <a :href="pollUrl" class="btn btn-primary" target="_blank">View It Here</a>
         </p>
       </div>
     </div>

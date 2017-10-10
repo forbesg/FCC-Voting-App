@@ -21,20 +21,30 @@
           <button class="btn btn-primary column col-xs-12 col-3 col-ml-auto" type="submit">Login</button>
         </div>
       </form>
-      <nuxt-link class="btn btn-link text-center" :to="{ name: 'register', params: {} }">Need to register?</nuxt-link>
+      <div class="divider text-center" data-content="OR"></div>
+      <div class="column col-12 social-login">
+        <span class="twitter-sprite" :style="{ backgroundImage: `url(${sprite})`}"></span>
+        <a href="/api/auth/twitter" class="btn twitter float-right" >Sign In With Twitter</a>
+      </div>
+      <div class="divider text-center" data-content="OR Register"></div>
+      <div class="column col-12 register">
+        <nuxt-link class="btn btn-link text-center" :to="{ name: 'register', params: {} }">Need to register?</nuxt-link>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import axios from '~/plugins/axios'
+import sprite from '@/assets/img/twitter-bird.jpg'
 import { mapActions } from 'vuex'
 export default {
   data () {
     return {
       message: null,
       email: '',
-      password: ''
+      password: '',
+      sprite
     }
   },
   asyncData ({ req }) {
@@ -88,4 +98,22 @@ export default {
       margin-bottom: 20px;
     }
   }
+  .social-login {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+    span.twitter-sprite {
+      display: inline-block;
+      background-size: auto 36px;
+      height: 36px;
+      width: 36px;
+      margin: 0;
+    }
+    .twitter {
+      background-color: #00aced;
+      border-color: #ddd;
+      color: #fff;
+    }
+  }
+
 </style>

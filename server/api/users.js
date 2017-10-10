@@ -5,6 +5,9 @@ import User from '../models/users'
 
 const router = Router()
 
+router.get('/users', (req, res) => {
+  res.send({message: 'OK'})
+})
 /* UPDATE users password. */
 router.put('/users/:id', bodyParser.json(),  function (req, res, next) {
   const id = req.params.id
@@ -51,6 +54,19 @@ router.post('/login', bodyParser.json(), passport.authenticate('local'), (req, r
     return res.send(req.user)
   }
 });
+
+// Sign In With Twitter
+
+
+router.get('/auth/twitter/callback', (req, res, next) => {
+  console.log('Heard back from Twitter')
+  next()
+}, passport.authenticate('twitter', {
+  successRedirect: '/dashboard',
+  failureRedirect: '/login'
+}));
+
+router.get('/auth/twitter', passport.authenticate('twitter'));
 
 router.get('/logout', (req, res) => {
   req.logout()
