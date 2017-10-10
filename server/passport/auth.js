@@ -3,7 +3,7 @@ import Local from 'passport-local'
 import Twitter from 'passport-twitter'
 import User from '../models/users'
 if (process.env.NODE_ENV !== 'production') {
-  import config from './config'
+  let config = require('./config')
 }
 
 const LocalStrategy = Local.Strategy
@@ -26,7 +26,6 @@ passport.use(new LocalStrategy ({
   }
 ));
 
-console.log(config)
 // Twitter Strategy
 passport.use(new TwitterStrategy ({
     consumerKey: process.env.TWITTER_CONSUMER_KEY || config.consumerKey,
