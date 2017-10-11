@@ -83,6 +83,7 @@ export default {
         {hid: 'twittercreator', property: 'twitter:creator', content: '@4beez'},
         {hid: 'og-url', property: 'og:url', content: this.url},
         {hid: 'og-title', property: 'og:title', content: this.poll.title},
+        {hid: 'og-description', property: 'og:description', content: 'You have been shared a Poll - Click through to make your vote.'},
         {hid: 'og-image', property: 'og:image', content: this.ogImage},
         {hid: 'og-image-width', property: 'og:image:width', content: '180px'},
         {hid: 'og-image-height', property: 'og:image:height', content: '180px'}
