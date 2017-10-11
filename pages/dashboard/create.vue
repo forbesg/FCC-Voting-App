@@ -78,9 +78,6 @@ export default {
       pollUrl: null
     }
   },
-  head () {
-
-  },
   methods: {
     addAnswer (e) {
       e.preventDefault()
