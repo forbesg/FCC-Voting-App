@@ -6,7 +6,7 @@
           <button class="btn btn-clear float-right" @click="handleCloseToast"></button>
           {{ message }}
         </div>
-        <h1>Login</h1>
+        <h1>Login || {{ $route.query.poll }}</h1>
       </header>
       <form class="form form-horizontal" @submit="handleSubmit">
         <div class="form-group columns" >
@@ -74,6 +74,10 @@ export default {
         } else {
           // If user credentials are valid return user
           this.login(response.data)
+          if (this.$route.query.poll) {
+            this.$router.replace(`/polls/${this.$route.query.poll}`)
+            return
+          }
           this.$router.replace('/dashboard')
         }
       }).catch(err => {

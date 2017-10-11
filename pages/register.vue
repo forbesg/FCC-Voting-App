@@ -23,6 +23,7 @@
           <label class="form-label" for="password2">Confirm Password: </label>
           <input class="form-input" type="password" name="password2" v-model="password2" value="">
         </div>
+        <input v-if="$route.query.poll" hidden name="poll" :value="$route.query.poll" />
         <div class="form-group columns">
           <input class="btn btn-primary column col-3 col-ml-auto" type="submit" value="Register">
         </div>

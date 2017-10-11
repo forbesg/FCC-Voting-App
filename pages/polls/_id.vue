@@ -22,8 +22,8 @@
           </p>
           <div class="login-buttons container">
             <div class="columns">
-              <nuxt-link to='/login' class="btn btn-primary column col-xs-12 col-4">Login</nuxt-link>
-              <nuxt-link to='/register' class="btn btn-primary column col-xs-12 col-4 col-ml-auto">Register</nuxt-link>
+              <nuxt-link :to="{ path: '/login', query: { poll: poll._id } }" class="btn btn-primary column col-xs-12 col-4">Login</nuxt-link>
+              <nuxt-link :to="{ path: '/register', query: { poll: poll._id } }" class="btn btn-primary column col-xs-12 col-4 col-ml-auto">Register</nuxt-link>
             </div>
           </div>
         </div>

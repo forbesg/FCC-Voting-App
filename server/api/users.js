@@ -43,6 +43,9 @@ router.post('/register', bodyParser.urlencoded({extended: true}), (req, res) => 
         req.flash('error', 'There was an error logging the new user in')
         return res.redirect('/register')
       }
+      if (req.body.poll) {
+        return res.redirect(`/polls/${req.body.poll}`)
+      }
       return res.redirect('/dashboard')
     })
   })
