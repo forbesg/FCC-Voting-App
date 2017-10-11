@@ -48,7 +48,7 @@
 <script>
 import axios from '~/plugins/axios'
 import Chart from '~/components/chart'
-import image from '~/static/apple-icon-180x180.png'
+import image from '~/assets/img/opengraph-image.png'
 export default {
   data () {
     return {
@@ -87,8 +87,8 @@ export default {
         {hid: 'og-type', property: 'og:type', content: 'article'},
         {hid: 'og-description', property: 'og:description', content: 'You have been shared a Poll - Click through to make your vote.'},
         {hid: 'og-image', property: 'og:image', content: this.ogImage},
-        {hid: 'og-image-width', property: 'og:image:width', content: '180px'},
-        {hid: 'og-image-height', property: 'og:image:height', content: '180px'}
+        {hid: 'og-image-width', property: 'og:image:width', content: '500px'},
+        {hid: 'og-image-height', property: 'og:image:height', content: '300px'}
       ]
     }
   },
