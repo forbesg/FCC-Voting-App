@@ -11,17 +11,17 @@
       <div class="column col-xs-12 col-sm-12 col-md-12 col-4 text-center">
         <div class="icon-container"><i class="icon icon-plus"></i></div>
         <h4>Create</h4>
-        <p>Create a new poll to share with the world. Invite others to vote on your poll and view the results in a Chart.</p>
+        <p>Create a new poll to share with the world. Invite others to vote on your poll and visualise the results in a Chart.</p>
       </div>
       <div class="column col-xs-12 col-sm-12 col-md-12 col-4 text-center">
         <div class="icon-container"><i class="icon icon-mail"></i></div>
-        <h4>Title</h4>
-        <p>Text</p>
+        <h4>Manage</h4>
+        <p>Access your polls from your account dashboard and add additional polls of delete your polls that are no longer required.</p>
       </div>
       <div class="column col-xs-12 col-sm-12 col-md-12 col-4 text-center">
         <div class="icon-container"><i class="icon icon-share"></i></div>
         <h4>Share</h4>
-        <p>Text</p>
+        <p>Easily share your poll by Email, in a tweet of post it to Facebook to get your friends and followers involved.</p>
       </div>
     </div>
   </section>

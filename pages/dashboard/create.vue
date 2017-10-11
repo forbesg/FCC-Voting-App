@@ -164,6 +164,10 @@ export default {
   .share-buttons {
     a {
       margin: 10px;
+      i {
+        width: 16px;
+        height: 16px;
+      }
     }
   }
 

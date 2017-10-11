@@ -6,7 +6,7 @@
           <button class="btn btn-clear float-right" @click="handleCloseToast"></button>
           {{ message }}
         </div>
-        <h1>Login || {{ $route.query.poll }}</h1>
+        <h1>Login</h1>
       </header>
       <form class="form form-horizontal" @submit="handleSubmit">
         <div class="form-group columns" >

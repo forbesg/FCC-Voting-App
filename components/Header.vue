@@ -2,9 +2,7 @@
   <div class="header">
     <div class="brand">
       <img src="~static/logo-small.png" alt="Logo" />
-      <div class="title">
-        <h1><nuxt-link to='/'>{{$store.state.title}}</nuxt-link></h1>
-      </div>
+      <h1><nuxt-link to='/'>{{$store.state.title}}</nuxt-link></h1>
     </div>
     <div class="nav">
       <nuxt-link v-if="user" :to="{ name: 'users', params: {} }" class="btn btn-link">{{user.name}}</nuxt-link>
@@ -38,7 +36,7 @@ export default {
 
 <style lang="scss">
   .header {
-    background-color: #6BAB90;
+    background-color: #173143;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -55,19 +53,20 @@ export default {
         height: 50px;
         width: 50px;
       }
-      .title {
-        h1 {
-          a {
-            color: #fff;
-            font-size: 24px;
-            margin: 0 0 0 20px;
-            text-decoration: none;
-            &:hover {
-              color: #ddd;
-            }
+      h1 {
+        margin: 0;
+        a {
+          color: #fff;
+          display: block;
+          font-size: 24px;
+          margin: 0 0 0 20px;
+          text-decoration: none;
+          &:hover {
+            color: #ddd;
           }
         }
       }
+      
     }
 
     .nav {
