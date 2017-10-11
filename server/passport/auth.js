@@ -4,7 +4,7 @@ import Twitter from 'passport-twitter'
 import User from '../models/users'
 
 // Should only be imported in development
-import config from './config'
+// import config from './config'
 
 const LocalStrategy = Local.Strategy
 const TwitterStrategy = Twitter.Strategy
