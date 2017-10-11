@@ -32,6 +32,7 @@
       <div class="form-group text-center">
         <button class="btn btn-primary" @click="handleShowResults">View Results</button>
       </div>
+      <fg-share :pollUrl="url"></fg-share>
       <div v-if="error" class="toast toast-warning">
         {{ error }}
       </div>
@@ -49,6 +50,7 @@
 <script>
 import axios from '~/plugins/axios'
 import Chart from '~/components/chart'
+import Share from '~/components/share'
 import image from '~/assets/img/opengraph-image.png'
 export default {
   data () {
@@ -133,7 +135,8 @@ export default {
     }
   },
   components: {
-    Chart
+    Chart,
+    'fg-share': Share
   }
 }
 </script>

@@ -41,26 +41,7 @@
         <p>
           <a :href="pollUrl" class="btn btn-primary" target="_blank">View It Here</a>
         </p>
-        <div class="divider text-center" data-content="Share Your Poll"></div>
-        <div class="share-buttons">
-          <a class="btn btn-primary tooltip"
-            data-tooltip="Share by Email"
-            :href="`mailto:?subject=Check%20Out%20This%20Poll&body=Have%20a%20look%20at%20this%20poll%20-%20${pollUrl}`">
-            <i class="icon icon-mail"></i>
-          </a>
-          <a class="btn btn-primary tooltip"
-            data-tooltip="Share on Twitter"
-            target="_blank"
-            :href="`https://twitter.com/intent/tweet?text=Check%20Out%20This%20Poll&body=Have%20a%20look%20at%20this%20poll%20-%20${pollUrl}&url=${pollUrl}`">
-            <i class="fa fa-twitter"></i>
-          </a>
-          <a class="btn btn-primary tooltip"
-            data-tooltip="Share on Facebook"
-            target="_blank"
-            :href="`https://www.facebook.com/sharer/sharer.php?u=${pollUrl}`">
-            <i class="fa fa-facebook"></i>
-          </a>
-        </div>
+        <fg-share :pollUrl="pollUrl"></fg-share>
       </div>
     </div>
   </div>
@@ -68,7 +49,9 @@
 
 <script>
 import axios from '~/plugins/axios'
+import Share from '~/components/share'
 import { mapMutations } from 'vuex'
+
 export default {
   data () {
     return {
@@ -77,6 +60,9 @@ export default {
       error: null,
       pollUrl: null
     }
+  },
+  components: {
+    'fg-share': Share
   },
   methods: {
     addAnswer (e) {
@@ -160,15 +146,4 @@ export default {
   .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
     opacity: 0;
   }
-
-  .share-buttons {
-    a {
-      margin: 10px;
-      i {
-        width: 16px;
-        height: 16px;
-      }
-    }
-  }
-
 </style>
