@@ -81,6 +81,7 @@ export default {
       meta: [
         {hid: 'twittercard', property: 'twitter:card', content: 'summary'},
         {hid: 'twittercreator', property: 'twitter:creator', content: '@4beez'},
+        {hid: 'twittertexttitle', property: 'twitter:text:title', content: this.poll.title},
         {hid: 'og-url', property: 'og:url', content: this.url},
         {hid: 'og-title', property: 'og:title', content: this.poll.title},
         {hid: 'og-description', property: 'og:description', content: 'You have been shared a Poll - Click through to make your vote.'},
