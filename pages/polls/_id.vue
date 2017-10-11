@@ -16,6 +16,9 @@
         <div v-if="$store.state.user" class="form-group">
           <button type="submit" class="btn btn-primary">Submit</button>
         </div>
+        <div v-if="$store.state.user" class="form-group">
+          <button class="btn btn-primary" @click="handleShowResults">Show Results</button>
+        </div>
         <div v-if="!$store.state.user" class="form-group">
           <p>
             You have to be logged in to vote
@@ -33,8 +36,11 @@
       </div>
     </div>
     <div v-if="updated" class="column col-xs-12 col-sm-10 col-md-6 col-lg-4 col-3 col-mx-auto">
-      <h4>Vote Count</h4>
+      <h4>Vote Count<span v-if="count > 0"> | {{count}}</span></h4>
       <Chart :poll="poll" />
+      <div v-if="$store.state.user" class="toggle-results-button">
+        <button class="btn btn-primary" @click="handleShowResults">Hide Results</button>
+      </div>
     </div>
   </div>
 </template>
@@ -64,6 +70,15 @@ export default {
     }
     redirect('/404')
   },
+  computed: {
+    // Calculate the total number of votes submitted
+    count () {
+      return this.poll.answers.reduce((count, answer) => {
+        count += answer.votes
+        return count
+      }, 0)
+    }
+  },
   methods: {
     handleAnswerSubmit (e) {
       e.preventDefault()
@@ -89,6 +104,9 @@ export default {
       }).catch(err => {
         console.log(err)
       })
+    },
+    handleShowResults () {
+      this.updated = !this.updated
     }
   },
   components: {
@@ -136,5 +154,8 @@ export default {
         margin-bottom: 10px;
       }
     }
+  }
+  .toggle-results-button {
+    margin: 20px 0;
   }
 </style>

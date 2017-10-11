@@ -2,9 +2,9 @@ import passport from 'passport';
 import Local from 'passport-local'
 import Twitter from 'passport-twitter'
 import User from '../models/users'
-if (process.env.NODE_ENV !== 'production') {
-  let config = require('./config')
-}
+
+// Should only be imported in development
+import config from './config'
 
 const LocalStrategy = Local.Strategy
 const TwitterStrategy = Twitter.Strategy
