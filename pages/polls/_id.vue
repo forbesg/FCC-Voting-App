@@ -5,7 +5,6 @@
       <h6>
         A Poll By: {{ poll.owner.name }}
       </h6>
-      <p>{{url}}</p>
     </div>
     <div v-if="!updated" class="form-container column col-xs-12 col-sm-10 col-md-6 col-4 col-mx-auto">
       <form class="form" action="index.html" method="post" @submit="handleAnswerSubmit">
