@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="register container columns">
-    <div class="form-container column col-xs-12 col-sm-10 col-md-8 col-lg-6 col-4 col-mx-auto">
+    <div class="form-container column col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 col-4 col-mx-auto">
       <div class="toast toast-error" v-if="message">
         <button class="btn btn-clear float-right" @click="handleCloseToast"></button>
         {{ message }}
@@ -27,7 +27,10 @@
           <input class="btn btn-primary column col-3 col-ml-auto" type="submit" value="Register">
         </div>
       </form>
-      <nuxt-link class="btn btn-link text-center" :to="{ name: 'login', params: {} }">Already registered? Login Here.</nuxt-link>
+      <div class="divider text-center" data-content="Already registered?"></div>
+      <div class="text-right">
+        <nuxt-link class="btn btn-default text-center" :to="{ name: 'login', params: {} }">Login Here</nuxt-link>
+      </div>
     </div>
   </div>
 </template>

@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="container columns">
-    <div class="form-container column col-xs-12 col-sm-10 col-md-8 col-lg-6 col-4 col-mx-auto">
+    <div class="form-container column col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 col-4 col-mx-auto">
       <header class="">
         <div class="toast toast-error" v-if="message">
           <button class="btn btn-clear float-right" @click="handleCloseToast"></button>
@@ -27,8 +27,8 @@
         <a href="/api/auth/twitter" class="btn twitter float-right" >Sign In With Twitter</a>
       </div>
       <div class="divider text-center" data-content="OR Register"></div>
-      <div class="column col-12 register">
-        <nuxt-link class="btn btn-link text-center" :to="{ name: 'register', params: {} }">Need to register?</nuxt-link>
+      <div class="column col-12 register text-center">
+        <nuxt-link class="btn btn-primary text-center" :to="{ name: 'register', params: {} }">Need to register?</nuxt-link>
       </div>
     </div>
   </div>
@@ -93,7 +93,7 @@ export default {
 
 <style lang="scss" scoped>
   .form-container {
-    margin-top: 50px;
+    margin: 50px auto;
     .toast {
       margin-bottom: 20px;
     }

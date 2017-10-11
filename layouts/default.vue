@@ -45,7 +45,6 @@ export default {
 
 .title
 {
-  color: #000;
   font-weight: 300;
   font-size: 2.5em;
   margin: 0;
@@ -56,7 +55,6 @@ export default {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  // height: 200px;
   margin-bottom: 10px;
   padding: 30px 0;
   h1 {

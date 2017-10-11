@@ -22,7 +22,6 @@ const store = () => new Vuex.Store({
       state.user = null
     },
     ADD_POLL: function (state, newPoll) {
-      console.log(newPoll)
       state.polls.push(newPoll)
     },
     UPDATE_POLLS: function (state, pollArray) {

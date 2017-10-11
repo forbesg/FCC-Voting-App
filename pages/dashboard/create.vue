@@ -1,9 +1,9 @@
 <template lang="html">
   <div class="container">
-    <header class="column col-xs-12 col-sm-10 col-md-8 col-4 col-mx-auto">
+    <header class="column col-xs-12 col-sm-10 col-md-8 col-xl-6 col-4 col-mx-auto text-center">
       <h2>{{ !pollUrl ? 'Create New Poll' : 'Congratulations' }}</h2>
     </header>
-    <div class="form-container column col-xs-12 col-sm-10 col-md-8 col-4 col-mx-auto">
+    <div class="form-container column col-xs-12 col-sm-10 col-md-8 col-xl-6 col-4 col-mx-auto">
       <form class="form form-horizontal create-poll" @submit="handleFormSubmit" v-if="!pollUrl">
         <header class="columns">
           <h6>Poll Question</h6>
@@ -41,6 +41,26 @@
         <p>
           <a :href="pollUrl" class="btn btn-primary" target="_blank">View It Here</a>
         </p>
+        <div class="divider text-center" data-content="Share Your Poll"></div>
+        <div class="share-buttons">
+          <a class="btn btn-primary tooltip"
+            data-tooltip="Share by Email"
+            :href="`mailto:?subject=Check%20Out%20This%20Poll&body=Have%20a%20look%20at%20this%20poll%20-%20${pollUrl}`">
+            <i class="icon icon-mail"></i>
+          </a>
+          <a class="btn btn-primary tooltip"
+            data-tooltip="Share on Twitter"
+            target="_blank"
+            :href="`https://twitter.com/intent/tweet?text=Check%20Out%20This%20Poll&body=Have%20a%20look%20at%20this%20poll%20-%20${pollUrl}&url=${pollUrl}`">
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a class="btn btn-primary tooltip"
+            data-tooltip="Share on Facebook"
+            target="_blank"
+            :href="`https://www.facebook.com/sharer/sharer.php?u=${pollUrl}`">
+            <i class="fa fa-facebook"></i>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -57,6 +77,9 @@ export default {
       error: null,
       pollUrl: null
     }
+  },
+  head () {
+
   },
   methods: {
     addAnswer (e) {
@@ -99,23 +122,6 @@ export default {
       }).catch(err => {
         console.log(err)
       })
-
-      // fetch('/api/polls/add', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json'
-      //   },
-      //   body: JSON.stringify(question)
-      // }).then(response => {
-      //   if (response.status === 200) {
-      //     return response.json()
-      //   }
-      // }).then(json => {
-      //   this.addPoll(json)
-      //   this.pollUrl = 'http://localhost:3000/polls/' + json._id + ''
-      // }).catch(err => {
-      //   console.log('Error', err)
-      // })
     },
     ...mapMutations({
       addPoll: 'ADD_POLL'
@@ -156,6 +162,12 @@ export default {
   }
   .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
     opacity: 0;
+  }
+
+  .share-buttons {
+    a {
+      margin: 10px;
+    }
   }
 
 </style>

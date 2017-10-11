@@ -2,9 +2,10 @@
   <div class="text-center" v-if="poll">
     <div class="banner">
       <h1>{{ poll.question }}</h1>
-      <h4>
+      <h6>
         A Poll By: {{ poll.owner.name }}
-      </h4>
+      </h6>
+      <p>{{url}}</p>
     </div>
     <div v-if="!updated" class="form-container column col-xs-12 col-sm-10 col-md-6 col-4 col-mx-auto">
       <form class="form" action="index.html" method="post" @submit="handleAnswerSubmit">
@@ -13,11 +14,11 @@
             <input type="radio" name="answer" :value="index" />
           </label>
         </div>
-        <div v-if="$store.state.user" class="form-group">
+        <div v-if="$store.state.user" class="form-group text-center">
           <button type="submit" class="btn btn-primary">Submit</button>
         </div>
-        <div v-if="$store.state.user" class="form-group">
-          <button class="btn btn-primary" @click="handleShowResults">Show Results</button>
+        <div class="form-group text-center">
+          <button class="btn btn-primary" @click="handleShowResults">View Results</button>
         </div>
         <div v-if="!$store.state.user" class="form-group">
           <p>
@@ -35,10 +36,10 @@
         {{ error }}
       </div>
     </div>
-    <div v-if="updated" class="column col-xs-12 col-sm-10 col-md-6 col-lg-4 col-3 col-mx-auto">
-      <h4>Vote Count<span v-if="count > 0"> | {{count}}</span></h4>
+    <div v-if="updated" class="column col-xs-10 col-sm-10 col-md-8 col-lg-6 col-xl-6 col-4 col-mx-auto">
+      <h4>Vote Count - {{count}}</h4>
       <Chart :poll="poll" />
-      <div v-if="$store.state.user" class="toggle-results-button">
+      <div class="toggle-results-button">
         <button class="btn btn-primary" @click="handleShowResults">Hide Results</button>
       </div>
     </div>
@@ -48,15 +49,18 @@
 <script>
 import axios from '~/plugins/axios'
 import Chart from '~/components/chart'
+import image from '~/static/apple-icon-180x180.png'
 export default {
   data () {
     return {
       poll: null,
       updated: false,
-      error: null
+      error: null,
+      url: null,
+      ogImage: null
     }
   },
-  async asyncData ({ redirect, route, store }) {
+  async asyncData ({ redirect, route, store, env }) {
     let poll = await axios.get(`/api/polls/${route.params.id}`).then(response => {
       if (response.status === 404) {
         return null
@@ -65,10 +69,24 @@ export default {
     })
     if (poll) {
       return {
-        poll
+        poll,
+        url: `${env.baseUrl}${route.path}`,
+        ogImage: `${env.baseUrl}${image}`
       }
     }
     redirect('/404')
+  },
+  head () {
+    return {
+      title: this.poll.question,
+      meta: [
+        {hid: 'twittercard', property: 'twitter:card', content: 'summary'},
+        {hid: 'twittercreator', property: 'twitter:creator', content: '@4beez'},
+        {hid: 'og:url', property: 'og:url', content: this.url},
+        {hid: 'og:title', property: 'og:title', content: this.poll.title},
+        {hid: 'og:image', property: 'og:image', content: this.ogImage}
+      ]
+    }
   },
   computed: {
     // Calculate the total number of votes submitted

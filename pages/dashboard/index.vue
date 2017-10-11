@@ -1,7 +1,7 @@
 <template lang="html">
-  <div class="my-polls-container column col-xs-12 col-sm-10 col-md-8 col-lg-6 col-4 col-mx-auto">
+  <div class="my-polls-container column col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 col-4 col-mx-auto">
     <h4>My Polls</h4>
-    <div class="toast toast-default text-center" v-if="!polls || polls.length < 1">
+    <div class="empty text-center" v-if="!polls || polls.length < 1">
       <h2>You Have No Polls</h2>
       <h6>Click New Poll above to Add your First</h6>
     </div>

@@ -25,6 +25,6 @@ export default {
 
 <style lang="scss">
   table {
-    margin: 10px 0;
+    margin: 10px 0 50px 0;
   }
 </style>

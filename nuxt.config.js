@@ -14,6 +14,7 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://picturepan2.github.io/spectre/dist/spectre.min.css'},
       { rel: 'stylesheet', href: 'https://picturepan2.github.io/spectre/dist/spectre-icons.min.css'},
+      { rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'},
       { rel: 'manifest', href: '/manifest.json' }
     ]
   },

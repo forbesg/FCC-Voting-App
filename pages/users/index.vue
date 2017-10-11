@@ -4,32 +4,34 @@
       <h1>User <span v-if="$store.state.user">| {{ $store.state.user.name || 'Signed Out' }}</span></h1>
     </div>
     <div class="container">
-      <div class="column col-xs-12 col-sm-10 col-md-8 col-lg-6 col-4 col-mx-auto">
+      <div class="column col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 col-4 col-mx-auto">
         <h4>Change Password</h4>
-        <form class="form" @submit="handleChangePassword">
-          <div class="form-group">
-            <label for="current_password" class="form-label">Current Password:</label>
-            <input class="form-input" type="password" name="current_password" v-model="current_password" value="">
+        <div class="form-container">
+          <form class="form" @submit="handleChangePassword">
+            <div class="form-group">
+              <label for="current_password" class="form-label">Current Password:</label>
+              <input class="form-input" type="password" name="current_password" v-model="current_password" value="">
+            </div>
+            <div class="form-group">
+              <label for="new_password" class="form-label">New Password:</label>
+              <input class="form-input" type="password" name="new_password" v-model="new_password" value="">
+            </div>
+            <div class="form-group">
+              <label for="confirm_new_password" class="form-label">Confirm New Password:</label>
+              <input class="form-input" type="password" name="confirm_new_password" v-model="confirm_new_password" value="">
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn btn-primary column col-ml-auto" value="Change Password">
+            </div>
+          </form>
+          <div v-if="error" class="toast toast-warning mt-2">
+            <button class="btn btn-clear float-right" @click="clearToast"></button>
+            {{ error }}
           </div>
-          <div class="form-group">
-            <label for="new_password" class="form-label">New Password:</label>
-            <input class="form-input" type="password" name="new_password" v-model="new_password" value="">
+          <div v-if="success" class="toast toast-success mt-2">
+            <button class="btn btn-clear float-right" @click="clearToast"></button>
+            {{ success }}
           </div>
-          <div class="form-group">
-            <label for="confirm_new_password" class="form-label">Confirm New Password:</label>
-            <input class="form-input" type="password" name="confirm_new_password" v-model="confirm_new_password" value="">
-          </div>
-          <div class="form-group">
-            <input type="submit" class="btn btn-primary column col-ml-auto" value="Change Password">
-          </div>
-        </form>
-        <div v-if="error" class="toast toast-warning mt-2">
-          <button class="btn btn-clear float-right" @click="clearToast"></button>
-          {{ error }}
-        </div>
-        <div v-if="success" class="toast toast-success mt-2">
-          <button class="btn btn-clear float-right" @click="clearToast"></button>
-          {{ success }}
         </div>
       </div>
     </div>

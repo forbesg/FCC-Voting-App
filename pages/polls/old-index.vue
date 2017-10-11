@@ -3,7 +3,7 @@
     <div class="banner text-center">
       <h1>Polls</h1>
     </div>
-    <div class="column col-4 col-lg-6 col-md-8 col-xs-12 col-sm-10 col-mx-auto">
+    <div class="column col-4 col-xl-6 col-lg-6 col-md-8 col-xs-12 col-sm-10 col-mx-auto">
       <FGTable :polls="polls || $store.state.polls" />
     </div>
   </div>

@@ -8,6 +8,10 @@ html, body
   margin: 0;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: #0c632c;
+}
+
 footer
 {
   padding: 20px;
@@ -23,7 +27,63 @@ a, a:hover, a:focus, a:visited
 .logo {
   width: 100%;
   height: auto;
-  margin: 50px 0;
+  margin-top: 30px;
   max-width: 300px;
   max-height: 300px;
+}
+
+.form-container, table {
+  margin-bottom: 50px;
+}
+
+/**
+** Spectre CSS Overrides  
+**/
+.btn {
+  background-color: #fff;
+  border-color: #2a4f68;
+  color: #444;
+}
+.btn:hover {
+  background-color: rgb(243, 243, 243);
+  border-color: #2a4f68;
+}
+.btn.active, .btn:active {
+  background-color: rgb(243, 243, 243);
+  border-color: #2a4f68;
+  color: #444;
+  text-decoration: none;
+}
+.btn:focus, .btn:hover {
+  background: #f1f1fc;
+  border-color: #2a4f68;
+  text-decoration: none;
+}
+.btn:focus {
+  box-shadow: 0 0 0 0.1rem rgba(49, 48, 64, 0.2);
+}
+.btn.btn-primary {
+  background-color: #335872;
+  border-color: #2a4f68;
+}
+.btn.btn-primary:focus, .btn.btn-primary:hover {
+  background-color: #2D3C69;
+  border-color: #313a54;
+}
+.btn.btn-primary.active, .btn.btn-primary:active {
+  background-color: #2D3C69;
+  border-color: #313a54;
+}
+.btn.btn-link:focus, .btn.btn-link:hover, .btn.btn-link:active {
+  background: 0 0;
+  border-color: transparent;
+  color: #fff;
+  text-decoration: none;
+}
+.divider[data-content] {
+  margin: 2rem 0;
+}
+.form-input:focus {
+  border-color: #335872;
+  box-shadow: 0 0 0 0.1rem rgba(51, 88, 114, 0.2);
 }

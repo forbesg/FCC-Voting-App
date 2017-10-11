@@ -9,7 +9,6 @@
     <div class="nav">
       <nuxt-link v-if="user" :to="{ name: 'users', params: {} }" class="btn btn-link">{{user.name}}</nuxt-link>
       <nuxt-link v-if="user" :to="{ name: 'dashboard', params: {} }" class="btn btn-link">Dashboard</nuxt-link>
-      <nuxt-link :to="{ name: 'polls', params: {} }" class="btn btn-link">Polls</nuxt-link>
       <nuxt-link :to="{ name: 'register', params: {} }" v-if="!user" class="btn btn-link">Register</nuxt-link>
       <nuxt-link :to="{ name: 'login', params: {} }" v-if="!user" class="btn btn-link">Login</nuxt-link>
       <a href="/logout" v-if="user" @click="handleLogout" class="btn btn-link">Logout</a>
@@ -39,7 +38,7 @@ export default {
 
 <style lang="scss">
   .header {
-    background-color: #2d3c69;
+    background-color: #6BAB90;
     color: #fff;
     display: flex;
     flex-direction: column;
