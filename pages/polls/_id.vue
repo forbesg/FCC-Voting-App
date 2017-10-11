@@ -79,7 +79,7 @@ export default {
     return {
       title: this.poll.question,
       meta: [
-        {hid: 'twittercard', property: 'twitter:card', content: 'summary'},
+        {hid: 'twittercard', property: 'twitter:card', content: 'summary_large_image'},
         {hid: 'twittercreator', property: 'twitter:creator', content: '@4beez'},
         {hid: 'twittertexttitle', property: 'twitter:text:title', content: this.poll.question},
         {hid: 'og-url', property: 'og:url', content: this.url},
