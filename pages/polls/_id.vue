@@ -10,7 +10,7 @@
       <form class="form" action="index.html" method="post" @submit="handleAnswerSubmit">
         <div class="form-group">
           <label for="answer" v-for="answer, index in poll.answers" :key="index">{{answer.answer}}
-            <input type="radio" name="answer" disabled :value="index" />
+        <input type="radio" name="answer" :value="index" />
           </label>
         </div>
         <div v-if="$store.state.user" class="form-group text-center">
