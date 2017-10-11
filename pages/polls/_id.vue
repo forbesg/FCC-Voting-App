@@ -10,14 +10,11 @@
       <form class="form" action="index.html" method="post" @submit="handleAnswerSubmit">
         <div class="form-group">
           <label for="answer" v-for="answer, index in poll.answers" :key="index">{{answer.answer}}
-            <input type="radio" name="answer" :value="index" />
+            <input type="radio" name="answer" disabled :value="index" />
           </label>
         </div>
         <div v-if="$store.state.user" class="form-group text-center">
           <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-        <div class="form-group text-center">
-          <button class="btn btn-primary" @click="handleShowResults">View Results</button>
         </div>
         <div v-if="!$store.state.user" class="form-group">
           <p>
@@ -31,6 +28,10 @@
           </div>
         </div>
       </form>
+      <div class="divider"></div>
+      <div class="form-group text-center">
+        <button class="btn btn-primary" @click="handleShowResults">View Results</button>
+      </div>
       <div v-if="error" class="toast toast-warning">
         {{ error }}
       </div>
