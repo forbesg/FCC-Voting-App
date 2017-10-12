@@ -12,7 +12,7 @@ To enable Twitter integration a /server/passport/config.js file is required.
 module.exports = {
   consumerKey: '**************',
   consumerSecret: '***************',
-  callbackURL: '<your-domain>/api/auth/twitter/calback'
+  callbackURL: '<your-domain>/api/auth/twitter/callback'
 }
 ```
 
