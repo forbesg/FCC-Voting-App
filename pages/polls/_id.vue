@@ -37,7 +37,7 @@
         {{ error }}
       </div>
     </div>
-    <div v-if="updated" class="column col-xs-10 col-sm-10 col-md-8 col-lg-6 col-xl-6 col-4 col-mx-auto">
+    <div v-if="updated" class="column col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 col-4 col-mx-auto">
       <h4>Vote Count - {{count}}</h4>
       <Chart :poll="poll" />
       <div class="toggle-results-button">

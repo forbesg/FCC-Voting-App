@@ -16,6 +16,8 @@ export default {
     const context = this.$refs.myChart
     const myChart = new Chart(context, {
       type: 'doughnut',
+      duration: 2000,
+      easing: 'easeInOutQuad',
       data: {
         labels,
         datasets: [{
@@ -55,5 +57,12 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+  @media (min-width: 1280px) {
+    canvas {
+      margin: 30px auto;
+      height: 500px !important;
+      width: 500px !important;
+    }
+  }
 </style>

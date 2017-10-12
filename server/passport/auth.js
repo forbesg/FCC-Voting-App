@@ -5,7 +5,6 @@ import User from '../models/users'
 // Should only be imported in development
 // let config = require('./config')
 
-
 const LocalStrategy = Local.Strategy
 const TwitterStrategy = Twitter.Strategy
 
