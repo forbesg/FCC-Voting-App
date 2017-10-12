@@ -1,8 +1,20 @@
-# nuxt-express
+# Voting App for Free Code Camp
 
-> Nuxt.js project
+> Create, manage and share your polls with the world
 
 ## Build Setup
+
+The Voting App is built using the Vue based Nuxt JS Framework with an Express backend and MongoDB Database.
+
+To enable Twitter integration a /server/passport/config.js file is required.
+
+``` javascript
+module.exports = {
+  consumerKey: '**************',
+  consumerSecret: '***************',
+  callbackURL: '<your-domain>/api/auth/twitter/calback'
+}
+```
 
 ``` bash
 # install dependencies
@@ -14,9 +26,3 @@ $ npm run dev
 # build for production and launch server
 $ npm start
 ```
-
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
-
-## Backpack
-
-We use [backpack](https://github.com/palmerhq/backpack) to watch and build the application, so you can use the latest ES6 features (module syntax, async/await, etc.).
