@@ -3,7 +3,7 @@ import Local from 'passport-local'
 import Twitter from 'passport-twitter'
 import User from '../models/users'
 // Should only be imported in development
-let config = require('./config')
+// let config = require('./config')
 
 const LocalStrategy = Local.Strategy
 const TwitterStrategy = Twitter.Strategy
