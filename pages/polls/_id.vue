@@ -28,7 +28,7 @@
           </div>
         </div>
       </form>
-      <div class="divider"></div>
+      <div class="divider text-center" data-content="View The Results"></div>
       <div class="form-group text-center">
         <button class="btn btn-primary" @click="handleShowResults">View Results</button>
       </div>
